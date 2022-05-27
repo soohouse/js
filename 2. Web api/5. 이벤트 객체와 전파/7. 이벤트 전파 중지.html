@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .root {
+            background: red;
+        }
+
+        .parent {
+            width: 50%;
+            height: 50%;
+            background: orange;
+        }
+
+        .child {
+            width: 50%;
+            height: 50%;
+            background: skyblue;
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="https://www.naver.com">네이버로 이동</a>
+
+    <br>
+
+    <div id="root">
+        <div id="parent">
+            <div id="child"></div>
+        </div>
+    </div>
+    
+    <script>
+
+        document.querySelector('.root').addEventListener('click', e => {
+            alert('root');
+        }), true;
+        document.querySelector('.parent').addEventListener('click', e => {
+            alert('parent');
+        });
+        document.querySelector('.child').addEventListener('click', e => {
+            alert('child');
+        });
+
+        
+    </script>
+</body>
+</html>
