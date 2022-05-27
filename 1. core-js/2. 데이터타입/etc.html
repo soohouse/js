@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //논리 타입
+        var logical = false;
+        logical = true;
+
+        //대문자(x. 변수로 인식해버림), 소문자로 써야함!
+        //logical = True;
+
+        //값을 0을 주면 if에서 0값 = false로 인식하고 해석함
+        //0은 false로, 0이 아닌 나머지 정수는 true로 해석 가능.
+        var apple = 0;
+        if(apple) {
+            console.log('사과가 ' + apple + '개 있습니다.');
+        } else {
+            console.log('사과가 하나도 없습니다.');
+        }
+
+        //null
+        var banana = '바나나';
+        banana = null;
+        console.log(typeof banana);
+        console.log(banana);
+
+        var i;
+        console.log(typeof i);
+
+    </script>
+    
+</body>
+</html>
