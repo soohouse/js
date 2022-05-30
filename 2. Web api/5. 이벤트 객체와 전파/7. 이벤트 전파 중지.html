@@ -7,7 +7,10 @@
     <title>Document</title>
 
     <style>
+
         .root {
+            width: 500px;
+            height: 500px;
             background: red;
         }
 
@@ -24,6 +27,7 @@
         }
 
     </style>
+
 </head>
 <body>
 
@@ -31,25 +35,37 @@
 
     <br>
 
-    <div id="root">
-        <div id="parent">
-            <div id="child"></div>
+    <div class="root">
+        <div class="parent">
+            <div class="child"></div>
         </div>
     </div>
-    
+
     <script>
 
         document.querySelector('.root').addEventListener('click', e => {
             alert('root');
-        }), true;
+        }, true);
+
         document.querySelector('.parent').addEventListener('click', e => {
             alert('parent');
-        });
+            //e.stopPropagation();
+        }, true);
+
         document.querySelector('.child').addEventListener('click', e => {
             alert('child');
+            //e.stopPropagation();
         });
 
-        
+        const $link = document.querySelector('a');
+        $link.addEventListener('click', e => {
+            if(!confirm('정말 이동하시겠어요?')) {
+                e.preventDefault(); //태그의 고유 기능을 막음.
+            }
+        });
+
+
     </script>
+    
 </body>
 </html>

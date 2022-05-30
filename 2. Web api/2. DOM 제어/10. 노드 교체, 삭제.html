@@ -12,11 +12,19 @@
         <li>Apple</li>
         <li>Banana</li>
     </ul>
-    
-    <script>
 
+    <script>
+        
         const $fruits = document.getElementById('fruits');
 
+        const $mango = document.createElement('li');
+        $mango.textContent = 'Mango';
+
+        $fruits.replaceChild($mango, $fruits.firstElementChild);
+
+        $fruits.removeChild($fruits.lastElementChild);
+
     </script>
+    
 </body>
 </html>
