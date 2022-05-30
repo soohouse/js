@@ -29,7 +29,12 @@
 
         const $c = document.getElementById('result').onclick = function() {
             
-            if()
+            if(+value === 0) {
+                alert('0미만으로 내릴 수 없습니다.');
+                return;
+            }
+            value--;
+            $count.setAttribute('value', value);
         };
        
 

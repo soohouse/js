@@ -27,24 +27,50 @@
 
     <script>
         const $selector = document.getElementById('selector');
-        const $msg = document.querySelector('msg');
-      
-        $seletor.onchange = function(e) {
+        const $msg = document.querySelector('.msg');
 
-            //console.log($seletor);
-            //console.log($seletor.children);
-            //console.log(e.target);
+        $selector.onchange = function(e) {
 
-            for($opt of $selector)  {
-                if($opt.seleted) {
-                    if($opt.value === '영어') {
-                        $msg.textContent = '영어입니다.';
-                    } else if($opt.value === '한국어') {
-                        $msg.textContent = '한국어 입니다.';
-                    } else if($opt.value === '중국어') {
-                        $msg.textContent = '중국어 입니다.';
-                    }
+            //  console.log($selector)
+            //  console.log($selector.children);
+            //  console.log(e.target);
+
+            /*
+            for($opt of $selector.children) {
+                if($opt.selected) {
+                   if($opt.value === '영어') {
+                       $msg.textContent = '영어 입니다.';
+                   } else if($opt.value === '한국어') {
+                       $msg.textContent = '한국어 입니다.';
+                   } else if($opt.value === '중국어') {
+                       $msg.textContent = '중국어 입니다.'
+                   }
                 }
+            }
+            */
+
+            //선택된 옵션의 index값을 얻어오는 문법.
+            //console.log($selector.options.selectedIndex);
+
+            /*
+            const idx = $selector.options.selectedIndex;
+            if(idx == 1) {
+                $msg.textContent = '영어 입니다.';
+            } else if(idx == 2) {
+                $msg.textContent = '한국어 입니다.';
+            } else if(idx == 3) {
+                $msg.textContent = '중국어 입니다.';
+            }
+            */
+
+            //select 요소 안에 선택된 option의 value를 바로 꺼내오는 법.
+            // console.log($selector.value);
+            if($selector.value === '영어') {
+                $msg.textContent = '영어 입니다.';
+            } else if($selector.value === '한국어') {
+                $msg.textContent = '한국어 입니다.';
+            } else if($selector.value === '중국어') {
+                $msg.textContent = '중국어 입니다.';
             }
         }
 
