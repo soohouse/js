@@ -31,6 +31,26 @@
 
         const $img = document.querySelector('.result img');
         const $ul = document.querySelector('ul');
+
+        $ul.addEventListener('click', function(e) {
+            if(e.target.matches('ul > li > img')) {
+                return;
+            }
+
+            //src.element라는 문법은 옛날 문법
+            $img.setAttribute('src', e.target.src);
+        });
+
+        /*
+        //이렇게 안해도됌 지정 안해줘도됌
+        const $imgList = document.querySelectorAll('ul li img');
+
+        for(let $ele of #imgList) {
+            $ele.cliick = function(e) {
+                $img.src = e.target.src;
+            }
+        }
+        */
     </script>
     
 </body>
