@@ -18,6 +18,9 @@ function makeNumberIcons() {
     const $numbers = document.getElementById('numbers');
     const $frag = document.createDocumentFragment();
 
+    console.log('min: ' + gameData.min);
+    console.log('max: ' + gameData.max);
+
     for(let i=gameData.min; i<=gameData.max; i++) {
         const $icon = document.createElement('div');
         $icon.classList.add('icon');
@@ -94,14 +97,18 @@ function checkAnswer($numbers, $target) {
 
 //핵심 실행 로직 즉시 실행 함수 (main 역할)
 (function(){
+
+    //div id=numbers 태그가 리턴.
     const $numbers = makeNumberIcons();
 
     //숫자 아이콘을 클릭했을 때의 이벤트(부모 요소에 이벤트 설정해서 전파)
     $numbers.addEventListener('click', e => {
+
         if(!e.target.matches('#numbers > .icon')) {
             return;
         }
         console.log(`${e.target.textContent} 클릭됨!`);
+        
         gameData.answer = +e.target.textContent;
 
         //정답 체크 함수 호출!
